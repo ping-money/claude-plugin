@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ping-plugins",
+  "description": "Official Ping plugins for Claude Code - earn money answering questions",
+  "owner": {
+    "name": "Ping Money",
+    "email": "support@ping-money.com"
+  },
+  "plugins": [
+    {
+      "name": "ping",
+      "description": "Earn money answering questions with Ping - a Q&A platform for Claude Code users",
+      "author": {
+        "name": "Ping Money",
+        "email": "support@ping-money.com"
+      },
+      "category": "productivity",
+      "source": "./ping",
+      "homepage": "https://ping-money.com"
+    }
+  ]
+}

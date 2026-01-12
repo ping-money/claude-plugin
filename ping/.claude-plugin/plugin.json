@@ -1,0 +1,18 @@
+{
+  "name": "ping",
+  "version": "1.0.0",
+  "description": "Earn money answering questions with Ping - a Q&A platform for Claude Code users",
+  "repository": "https://github.com/ping-money/claude-plugin",
+  "author": {
+    "name": "Ping Money",
+    "url": "https://ping-money.com"
+  },
+  "license": "MIT",
+  "mcpServers": {
+    "ping": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "ping-mcp-server"]
+    }
+  }
+}
