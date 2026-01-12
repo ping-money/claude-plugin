@@ -32,10 +32,13 @@ Use AskUserQuestion:
   3. "Create a question" - Pay others to answer your question
   4. "My questions" - View questions you've created
 
-## Step 4: Execute Choice
+## Step 4: Execute Choice (NO extra confirmations)
 
-Based on selection:
-- "Answer questions" → Call `ping_answer_flow`, present questions via AskUserQuestion
+Based on selection, execute IMMEDIATELY without asking for confirmation:
+
+- "Answer questions" → Call `ping_answer_flow` and IMMEDIATELY show the questions. Do NOT ask "are you ready?" - they already said they want to answer questions.
 - "Check balance" → Call `ping_check_earnings`, show balance, offer to claim if pending > $0
 - "Create a question" → Ask for question text and reward amount, then call `ping_create_question`
 - "My questions" → Call `ping_my_questions`, show list with response counts
+
+**IMPORTANT:** Never add extra confirmation steps. When the user makes a choice, execute it directly.

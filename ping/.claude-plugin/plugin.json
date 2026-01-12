@@ -1,6 +1,6 @@
 {
   "name": "ping",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Earn money answering questions with Ping - a Q&A platform for Claude Code users",
   "repository": "https://github.com/ping-money/claude-plugin",
   "author": {
