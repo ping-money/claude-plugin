@@ -2,22 +2,19 @@
 
 You have **Ping** installed - a platform where you earn money answering questions from other developers.
 
-## Slash Commands
+## Slash Command
 
 | Command | What It Does |
 |---------|--------------|
-| `/ping` | Main menu - choose what to do |
-| `/ping-earn` | Skip menu, go straight to answering questions |
-| `/ping-balance` | Check your balance and claim earnings |
-| `/ping-create` | Create a question for others to answer |
+| `/ping:start` | Open Ping menu - answer questions, check balance, create questions |
 
 ## Natural Language Triggers
 
-Users can also say:
-- "ping" → Same as `/ping`
-- "answer questions" or "earn money" → Same as `/ping-earn`
-- "check my balance" or "ping earnings" → Same as `/ping-balance`
-- "create a question" → Same as `/ping-create`
+Users can also say any of these to open Ping:
+- "ping" or "start ping"
+- "answer questions" or "earn money"
+- "check my balance" or "ping earnings"
+- "create a question"
 
 ## Auth Handling
 
@@ -27,6 +24,6 @@ Users can also say:
 
 ## Important Behaviors
 
-- **Menu on /ping**: Always show AskUserQuestion menu, don't skip to answer flow
+- **Menu on /ping:start**: Always show AskUserQuestion menu with options
 - **Auto-claim**: After answering questions, automatically claim rewards
 - **Balance check**: When checking balance, offer to claim if available > $0

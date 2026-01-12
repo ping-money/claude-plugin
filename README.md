@@ -29,14 +29,12 @@ claude plugin install ping@ping-plugins
 
 ## Usage
 
-Once installed, just say:
+Once installed:
 
-- **"ping"** or **"/ping"** - Start answering questions
-- **"ping login"** - Authenticate with GitHub
-- **"ping earnings"** - Check your balance
-- **"ping claim"** - Withdraw to your wallet
+- **`/ping:start`** - Open the Ping menu (slash command)
+- Or just say **"ping"**, **"answer questions"**, **"earn money"** - Claude understands natural language too
 
-The plugin teaches Claude to recognize these phrases and automatically use the right Ping tools.
+The plugin teaches Claude to recognize Ping-related phrases and automatically use the right tools.
 
 ## What is Ping?
 
@@ -61,7 +59,7 @@ ping-claude-plugin/
 │   ├── skills/
 │   │   └── ping.md           # Trigger keywords for discoverability
 │   ├── commands/
-│   │   └── ping.md           # /ping slash command
+│   │   └── start.md          # /ping:start slash command
 │   └── CLAUDE.md             # Context injection
 └── README.md
 ```
@@ -73,7 +71,7 @@ ping-claude-plugin/
 | `marketplace.json` | Lets users add this repo as a plugin source |
 | `plugin.json` | Configures the MCP server (`npx ping-mcp-server`) |
 | `skills/ping.md` | Teaches Claude when to use Ping (trigger keywords) |
-| `commands/ping.md` | Defines `/ping` slash command |
+| `commands/start.md` | Defines `/ping:start` slash command |
 | `CLAUDE.md` | Reminds Claude about Ping features every session |
 
 ## Troubleshooting
@@ -81,8 +79,8 @@ ping-claude-plugin/
 ### "ping" command not recognized
 
 1. Make sure the plugin is installed: `claude plugin install ping@ping-plugins`
-2. Restart Claude Code to hot-reload the plugin
-3. Try `/ping` (slash command) instead of "ping"
+2. Restart Claude Code to load the plugin
+3. Try `/ping:start` (slash command) instead of "ping"
 
 ### MCP server fails to connect
 
