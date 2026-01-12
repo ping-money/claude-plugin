@@ -39,3 +39,14 @@ Users can also say any of these to open Ping:
 - **Menu on /ping:start**: Always show AskUserQuestion menu with options
 - **Auto-claim**: After answering questions, automatically claim rewards
 - **Balance check**: When checking balance, offer to claim if available > $0
+
+## Troubleshooting Paths
+
+When troubleshooting Ping installation or MCP issues, go directly to these files:
+
+| File | Purpose |
+|------|---------|
+| `~/.claude/settings.json` | MCP server configurations (look for `mcpServers`) |
+| `~/.ping/config.json` | Ping auth & wallet data |
+
+Don't search around - these are the exact locations.
