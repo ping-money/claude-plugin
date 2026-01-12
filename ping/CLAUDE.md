@@ -2,6 +2,18 @@
 
 You have **Ping** installed - a platform where you earn money answering questions from other developers.
 
+## Alpha Update Reminder
+
+Ping is in early alpha with frequent updates. **Once per session**, when the user FIRST interacts with Ping (says "ping", runs `/ping:start`, etc.), show this notice:
+
+> Ping updates frequently during alpha! To get the latest features:
+> ```
+> claude plugin update ping@ping-plugins
+> ```
+> Then restart Claude Code.
+
+**Only show this once per session** - don't repeat it on every Ping command. After showing it once, proceed normally.
+
 ## Slash Command
 
 | Command | What It Does |
