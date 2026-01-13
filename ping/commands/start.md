@@ -1,68 +1,24 @@
 ---
 description: Earn money answering questions with Ping - shows main menu
-allowed-tools: mcp__ping__ping_login, mcp__ping__ping_whoami, mcp__ping__ping_stats, mcp__ping__ping_answer_flow, mcp__ping__ping_check_earnings, mcp__ping__ping_claim_reward, mcp__ping__ping_create_question, mcp__ping__ping_my_questions
+allowed-tools: mcp__ping__ping_login, mcp__ping__ping_welcome, mcp__ping__ping_answer_flow, mcp__ping__ping_check_earnings, mcp__ping__ping_claim_reward, mcp__ping__ping_create_question, mcp__ping__ping_my_questions
 ---
 
 # Ping Main Menu
 
 When the user runs /ping:start:
 
-## Step 1: Check Auth & Get Stats (Parallel)
+## Step 1: Show Welcome Banner
 
-Call these two tools IN PARALLEL:
-- `ping_whoami` - Check login status
-- `ping_stats` - Get platform stats for the banner
+Call `ping_welcome` - this returns the complete ASCII art banner with auth status and stats already included.
 
-## Step 2: Handle Auth
-
-**If NOT logged in:**
-- Tell user: "You need to login to use Ping."
+**If the banner shows "❌ Not logged in":**
 - Call `ping_login` immediately (opens browser for GitHub OAuth)
-- After login completes, call `ping_stats` and continue to Step 3
+- After login completes, call `ping_welcome` again to show updated banner
 
 **If logged in:**
-- Continue to Step 3
+- Continue to Step 2
 
-## Step 3: Show Welcome Banner (REQUIRED - DO NOT SKIP)
-
-**⚠️ CRITICAL: You MUST display this ASCII art banner. This is the brand experience. DO NOT skip it or summarize it.**
-
-Display this EXACT ASCII art banner (copy-paste it, fill in the stats):
-
-```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                                                      ┃
-┃   ██████╗ ██╗███╗   ██╗ ██████╗                      ┃
-┃   ██╔══██╗██║████╗  ██║██╔════╝                      ┃
-┃   ██████╔╝██║██╔██╗ ██║██║  ███╗                     ┃
-┃   ██╔═══╝ ██║██║╚██╗██║██║   ██║                     ┃
-┃   ██║     ██║██║ ╚████║╚██████╔╝                     ┃
-┃   ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝                      ┃
-┃                                                      ┃
-┃         💰 Get paid to share your knowledge          ┃
-┃                                                      ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-┃                                                      ┃
-┃   📊 Today on Ping                                   ┃
-┃   ─────────────────                                  ┃
-┃   🏆 {answersToday} answers submitted                ┃
-┃   💵 {claimedToday} in rewards claimed               ┃
-┃                                                      ┃
-┃   📬 {questionsAvailable} questions waiting for you  ┃
-┃                                                      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-```
-
-Replace the placeholders with actual stats:
-- `{answersToday}` → stats.answersToday
-- `{claimedToday}` → stats.rewardsClaimedToday
-- `{questionsAvailable}` → stats.questionsAvailable
-
-If stats show 0 for everything, use encouraging defaults like "Be the first today!"
-
-**After displaying the banner above, THEN show the menu below.**
-
-## Step 4: Show Menu
+## Step 2: Show Menu
 
 Use AskUserQuestion:
 - Header: "Ping"
