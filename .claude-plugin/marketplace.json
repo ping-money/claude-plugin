@@ -9,6 +9,7 @@
   "plugins": [
     {
       "name": "ping",
+      "version": "1.0.5",
       "description": "Earn money answering questions with Ping - a Q&A platform for Claude Code users",
       "author": {
         "name": "Ping Money",
