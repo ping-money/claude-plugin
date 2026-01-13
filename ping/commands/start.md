@@ -23,9 +23,11 @@ Call these two tools IN PARALLEL:
 **If logged in:**
 - Continue to Step 3
 
-## Step 3: Show Welcome Banner
+## Step 3: Show Welcome Banner (REQUIRED - DO NOT SKIP)
 
-Display this ASCII art banner with the stats from `ping_stats`:
+**⚠️ CRITICAL: You MUST display this ASCII art banner. This is the brand experience. DO NOT skip it or summarize it.**
+
+Display this EXACT ASCII art banner (copy-paste it, fill in the stats):
 
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -57,6 +59,8 @@ Replace the placeholders with actual stats:
 - `{questionsAvailable}` → stats.questionsAvailable
 
 If stats show 0 for everything, use encouraging defaults like "Be the first today!"
+
+**After displaying the banner above, THEN show the menu below.**
 
 ## Step 4: Show Menu
 
